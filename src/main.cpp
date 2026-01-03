@@ -1,4 +1,6 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
+#include "vectors/core.h"
 
 int main()
 {
