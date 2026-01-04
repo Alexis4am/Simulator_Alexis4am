@@ -143,23 +143,27 @@ namespace cyclone {
         return x*vector.x + y*vector.y + z*vector.z;
         }
         //---------------------------------------------------------------
+        //VECTOR PRODUCT/ CROSS PRODUCT
+        //so this is the explicit way of calculating the vector product
+        //straight up just call the damn thing
         Vector3 vectorProduct(const Vector3 &vector) const
         {
         return Vector3(y*vector.z-z*vector.y,
-        z*vector.x-x*vector.z,
-        x*vector.y-y*vector.x);
+                       z*vector.x-x*vector.z,
+                       x*vector.y-y*vector.x);
         }
-
+        //overloading the %= to update the vector we pass it to
         void operator %=(const Vector3 &vector)
         {
         *this = vectorProduct(vector);
         }
 
+        //
         Vector3 operator%(const Vector3 &vector) const
         {
         return Vector3(y*vector.z-z*vector.y,
-        z*vector.x-x*vector.z,
-        x*vector.y-y*vector.x);
+                       z*vector.x-x*vector.z,
+                       x*vector.y-y*vector.x);
         }
 
 
