@@ -1,4 +1,4 @@
-#include "precision.h"
+#include "../precision.h"
 
 namespace cyclone {
 
@@ -20,6 +20,11 @@ namespace cyclone {
 
         // Constructor (Assigned values)
         Vector3(real x, real y, real z) : x(x), y(y), z(z) {}
+        //----------MY OWN CODE FOR PRINTING THE WHOLE THING
+        friend std::ostream& operator<<(std::ostream& os, const Vector3& v) {
+            os << "(" << v.x << ", " << v.y << ", " << v.z << ")";
+            return os;
+        }
 
 
         // Inverts the Vector
@@ -165,6 +170,7 @@ namespace cyclone {
                        z*vector.x-x*vector.z,
                        x*vector.y-y*vector.x);
         }
+
 
 
     };
