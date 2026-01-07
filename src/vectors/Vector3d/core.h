@@ -20,12 +20,12 @@ namespace cyclone {
 
         // Constructor (Assigned values)
         Vector3(real x, real y, real z) : x(x), y(y), z(z) {}
+
         //----------MY OWN CODE FOR PRINTING THE WHOLE THING
         friend std::ostream& operator<<(std::ostream& os, const Vector3& v) {
             os << "(" << v.x << ", " << v.y << ", " << v.z << ")";
             return os;
         }
-
 
         // Inverts the Vector
         void invert()
