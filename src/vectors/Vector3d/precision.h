@@ -2,7 +2,7 @@
 
 #define real_sqrt sqrtf
 
-namespace cyclone {
+namespace cyclone{
     typedef float real;
 
 }

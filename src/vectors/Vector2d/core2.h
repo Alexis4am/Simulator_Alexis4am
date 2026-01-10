@@ -1,6 +1,6 @@
 #include "precision2.h"
 
-namespace cyclone {
+namespace cyclone2 {
     class Vector2 {
     public:
         real x,y;
@@ -68,11 +68,13 @@ namespace cyclone {
         {
             return Vector2(x * vector.x, y * vector.y);
         }
+        // SCALES THE VECTOR BY A VALUE
 
-
-        void operator *=(const real value ) {
-            x*= value;
-            y*= value;
+        //Changes vector:
+        void operator *= (const real value)
+        {
+            x *= value;
+            y *= value;
         }
 
         // Returns new vector:
@@ -80,6 +82,57 @@ namespace cyclone {
         {
             return Vector2(x*value, y*value);
         }
+
+        //---------------------------------------------------------------
+        //ADDS THE VECTOR WITH ANOTHER
+
+        // Changes vector:
+        void operator += (const Vector2& v)
+        {
+            x += v.x;
+            y += v.y;
+        }
+
+        // Returns new vector:
+        Vector2 operator+(const Vector2& v) const
+        {
+            return Vector2(x+v.x, y+v.y);
+        }
+        //---------------------------------------------------------------
+        //SUBSTRACT THE VECTOR BY A VALUE:
+
+        // Changes vector:
+        void operator -= (const Vector2& v)
+        {
+            x -= v.x;
+            y -= v.y;
+        }
+
+        // Returns new vector:
+        Vector2 operator-(const Vector2& v) const
+        {
+            return Vector2(x-v.x, y-v.y);
+        }
+
+        //---------------------------------------------------------------
+        //DOT PRODUCT/SCALAR PRODUCT (Returns a Scalar not a VECTOR):
+
+        real scalarProduct(const Vector2& vector) const
+        {
+            return (x * vector.x + y * vector.y);
+        }
+
+        real operator *(const Vector2 &vector) const
+        {
+            return x*vector.x + y*vector.y;
+        }
+        //---------------------------------------------------------------
+        //VECTOR PRODUCT/ CROSS PRODUCT
+        //so this is the explicit way of calculating the vector product
+        //straight up just call the damn thing
+
+
+
 
     };
 }

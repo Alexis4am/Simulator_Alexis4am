@@ -1,4 +1,4 @@
-#include "../precision.h"
+#include "precision.h"
 
 namespace cyclone {
 
@@ -140,7 +140,7 @@ namespace cyclone {
 
         real scalarProduct(const Vector3& vector) const
         {
-            return (x * vector.x, y * vector.y, z * vector.z);
+            return (x * vector.x +  y * vector.y + z * vector.z);
         }
 
         real operator *(const Vector3 &vector) const
